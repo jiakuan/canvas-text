@@ -1,0 +1,4 @@
+rootProject.name = 'canvas-text-root'
+
+include 'canvas-text'
+include 'demo'

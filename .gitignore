@@ -1,0 +1,33 @@
+# Eclipse
+.classpath
+.project
+.settings
+.metadata
+.directory
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+.project
+.classpath
+target
+*.patch
+
+*.class
+**/.gradle/
+**/build/
+/target
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/canvas-text-demo/war/
+/canvas-text-demo/src/main/webapp/demo/
+/canvas-text-demo/src/main/webapp/main.min.css

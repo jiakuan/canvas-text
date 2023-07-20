@@ -1,0 +1,111 @@
+import org.docstr.gradle.plugins.gwt.GwtCompileOptions
+import org.docstr.gradle.plugins.gwt.GwtJsInteropExportsOptions
+
+plugins {
+  id 'java'
+  id 'idea'
+  id 'war'
+
+  // https://github.com/jiakuan/gwt-gradle-plugin
+  // https://plugins.gradle.org/plugin/org.docstr.gwt
+  id "org.docstr.gwt" version "1.1.26"
+}
+
+archivesBaseName = "demo"
+
+dependencies {
+  implementation project(':canvas-text')
+
+  implementation "com.google.gwt:gwt-dev:2.10.0"
+}
+
+gwt {
+  gwtVersion = '2.10.0'
+  minHeapSize = "512M"
+  maxHeapSize = "1024M"
+  logLevel = 'INFO'
+  modules = ["org.docstr.gwt.canvastext.demo.Demo"]
+
+  jsInteropExports(({
+    shouldGenerate = true
+  } as Closure<GwtJsInteropExportsOptions>))
+
+  compiler(({
+    strict = true
+  } as Closure<GwtCompileOptions>))
+}
+
+war {
+  classpath = classpath.filter { file ->
+    // println file.name
+    (
+        !file.name.startsWith(('gwt-dev')) &&
+            !file.name.startsWith(('gwt-user')) &&
+            !file.name.startsWith(('guava-gwt')) &&
+            !file.name.startsWith(('gwtbootstrap3')) &&
+            !file.name.startsWith(('gwtbootstrap3-extras')) &&
+            !file.name.startsWith(('servlet-api'))
+    )
+  }
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+//sourceSets.main.resources { srcDir file('src/main/java') exclude '*/.java' }
+sourceSets.main.resources.srcDir 'src/main/java'
+sourceSets.test.resources.srcDir 'src/test/java'
+
+configurations {
+  runtime.exclude group: "com.google.gwt", module: "gwt-user"
+  runtime.exclude group: "com.google.gwt", module: "gwt-dev"
+}
+
+clean {
+  deleteFolder('classes')
+  deleteFolder('war')
+}
+
+build.doLast {
+  // Copy GWT module folders
+  deleteFolder('src/main/webapp/demo')
+  copyFilesInFolder('build/gwt/out/demo', 'src/main/webapp/demo')
+}
+
+private void deleteFolder(folderPath) {
+  File folder = new File(projectDir, folderPath)
+  if (folder.exists()) {
+    ant.echo('Deleting folder: ' + folder.absolutePath)
+    ant.delete(includeEmptyDirs: 'true') {
+      fileset(dir: folder)
+    }
+  }
+}
+
+private void copyFilesInFolder(sourcePath, destPath) {
+  File sourceDir = new File(projectDir, sourcePath)
+  if (!sourceDir.exists()) {
+    return
+  }
+
+  File destDir = new File(projectDir, destPath)
+  ant.echo('Copying: ' + sourcePath + ' => ' + destPath)
+  if (!destDir.exists()) {
+    destDir.mkdirs()
+  }
+  ant.copy(todir: destDir) {
+    fileset(dir: sourceDir)
+  }
+}
+
+private void copyFile(sourcePath, destPath) {
+  File sourceFile = new File(projectDir, sourcePath)
+  if (!sourceFile.exists()) {
+    return
+  }
+
+  File destFile = new File(projectDir, destPath)
+  ant.echo('Copying: ' + sourcePath + ' => ' + destPath)
+  if (!destFile.parentFile.exists()) {
+    destFile.parentFile.mkdirs()
+  }
+  ant.copyfile(src: sourceFile, dest: destFile)
+}

@@ -1,0 +1,12 @@
+
+Usage: make options...
+
+Option            Description
+------            -----------
+clean             Clean build directories of projects
+scss              Compile SCSS files into minified CSS
+build             Build projects with tests and quality checking
+run               Run the demo application
+release           Create a new release from master branch
+publish           Publish the latest version to Maven central
+
