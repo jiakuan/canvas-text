@@ -118,13 +118,9 @@ subprojects {
   dependencies {
     // Google Web Toolkit
     implementation "com.google.gwt:gwt-user:2.10.0"
-    implementation "com.google.guava:guava-gwt:31.1-jre"
     // https://github.com/google/elemental2
     implementation "com.google.elemental2:elemental2-dom:1.1.0"
     implementation "com.google.jsinterop:base:1.0.0"
-
-    // JSON
-    implementation 'com.github.nmorel.gwtjackson:gwt-jackson:0.15.4'
 
     // FindBugs annotations
     implementation "com.google.code.findbugs:annotations:3.0.1"
