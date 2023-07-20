@@ -2,9 +2,13 @@
 
 ![build](https://github.com/jiakuan/canvas-text/actions/workflows/gradle.yml/badge.svg)
 
-A Miniscule GWT/J2CL/Javascript library to render text on HTML5 Canvas with ZERO dependencies
+A Miniscule GWT/J2CL/Javascript library to render text on HTML5 Canvas with ZERO
+dependencies
 
-The algorithm is inspired by the original TypeScript project [Canvas-Txt](https://github.com/geongeorge/Canvas-Txt).
+This project is ported from the TypeScript
+project [Canvas-Txt](https://github.com/geongeorge/Canvas-Txt), and rewritten in
+Java, so it can be available in GWT/J2CL projects. The compiled JavaScript is
+also available for **pure JavaScript** projects.
 
 <div align="center">
 <img src="./doc/featured.png" width=600 alt="canvas-txt multiline text on html canvas">
@@ -35,10 +39,10 @@ Try the library with different options from the online demo: TODO
 
 TODO
 
-
 ### Pure Javascript in Browser
 
 ```html
+
 <canvas id="myCanvas" width="500" height="500"></canvas>
 
 TODO
@@ -49,7 +53,7 @@ TODO
 ![](./doc/canvas.jpg)
 
 |  Properties   |   Default    | Description                                                                    |
-| :-----------: | :----------: | :----------------------------------------------------------------------------- |
+|:-------------:|:------------:|:-------------------------------------------------------------------------------|
 |    `width`    | **Required** | Width of the text box                                                          |
 |   `height`    | **Required** | Height of the text box                                                         |
 |      `x`      | **Required** | X position of the text box                                                     |
@@ -70,7 +74,7 @@ TODO
 TODO
 
 | Method                                    | Description                                                                                                                                                                                                                     |
-| :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|:------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `drawText(ctx,text, config)`              | To draw the text to the canvas                                                                                                                                                                                                  |
 | `splitText({ ctx, text, justify, width }` | To split the text `{ ctx: CanvasRenderingContext2D, text: string, justify: boolean, width: number }`                                                                                                                            |
 | `getTextHeight({ ctx, text, style })`     | To get the height of the text `{ ctx: CanvasRenderingContext2D, text: string, style: string (font style we pass to ctx.font) }` [ctx.font docs](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font) |
