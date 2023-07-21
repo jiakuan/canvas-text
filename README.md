@@ -1,6 +1,6 @@
 # Canvas Text
 
-![build](https://github.com/jiakuan/canvas-text/actions/workflows/gradle.yml/badge.svg)
+![build](https://github.com/jiakuan/canvas-text/actions/workflows/gradle.yml/badge.svg) ![build](https://github.com/jiakuan/canvas-text/actions/workflows/maven.yml/badge.svg)
 
 A Miniscule GWT/J2CL/Javascript library to render text on HTML5 Canvas with ZERO
 dependencies
