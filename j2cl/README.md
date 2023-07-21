@@ -1,1 +1,0 @@
-Generate Javascript library using J2CL.
