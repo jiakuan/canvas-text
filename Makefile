@@ -12,7 +12,8 @@ scss:
 
 .PHONY: build
 build:
-	./gradlew build
+	./gradlew build && \
+	cd ${PROJECT_DIR}/canvas-text && mvn j2cl:build
 
 run: build
 	chmod +x ${PROJECT_DIR}/demo/start_server.sh && ${PROJECT_DIR}/demo/start_server.sh

@@ -1,6 +1,11 @@
 archivesBaseName = "canvas-text"
 
+def j2clVersion = "0.10.0-3c97afeac"
+
 dependencies {
+  testImplementation "com.vertispan.j2cl:junit-annotations:${j2clVersion}"
+  testImplementation "com.vertispan.j2cl:junit-emul:${j2clVersion}"
+  testImplementation "com.vertispan.j2cl:junit-emul:${j2clVersion}:sources"
 }
 
 signing {
