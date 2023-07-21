@@ -23,4 +23,5 @@ jobs:
         java-version: 1.8
 
     - name: Build with Maven
-      run: mvn com.vertispan.j2cl:j2cl-maven-plugin:build
+      working-directory: ./canvas-text
+      run: mvn j2cl:build
