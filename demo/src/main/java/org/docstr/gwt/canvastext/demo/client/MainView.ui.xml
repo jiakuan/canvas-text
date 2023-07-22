@@ -1,0 +1,80 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+  <g:HTMLPanel styleName="app">
+    <header>
+      <h1>Canvas-Text: Text on HTML5 Canvas in GWT/J2CL/Javascript</h1>
+      <p>A tiny, zero external dependency library that makes it easier to render
+        multiline text on HTML5 Canvas, available for GWT/J2CL/Javascript.
+        <br/>
+        (Read docs on <a href="https://github.com/jiakuan/canvas-text">
+          Github</a>)
+      </p>
+    </header>
+    <main>
+      <canvas/>
+      <div class="cfg">
+        <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+          convallis eros.
+        </textarea>
+        <P>Canvas-Text uses the concept of text boxes borrowed from popular
+          image editing software. You draw a rectangular box then place the text
+          in the box. Turn on the debug mode (below) to see what is happening.
+        </P>
+        <div class="slide">
+          <label class="cfg-name">X</label>
+          <input type="range" min="0" max="100" value="0"/>
+          <input type="number" min="0" max="100" value="0"/>
+        </div>
+        <div class="slide">
+          <label class="cfg-name">Y</label>
+          <input type="range" min="0" max="100" value="0"/>
+          <input type="number" min="0" max="100" value="0"/>
+        </div>
+        <div class="slide">
+          <label class="cfg-name">Width</label>
+          <input type="range" min="0" max="100" value="0"/>
+          <input type="number" min="0" max="100" value="0"/>
+        </div>
+        <div class="slide">
+          <label class="cfg-name">Height</label>
+          <input type="range" min="0" max="100" value="0"/>
+          <input type="number" min="0" max="100" value="0"/>
+        </div>
+        <div class="align">
+          <label class="cfg-name">Align</label>
+          <div class="groups">
+            <div class="group">
+              <div ui:field="iconAlignLeft" class="icon"/>
+              <div ui:field="iconAlignHCenter" class="icon"/>
+              <div ui:field="iconAlignRight" class="icon"/>
+            </div>
+            <div class="group">
+              <div ui:field="iconAlignTop" class="icon"/>
+              <div ui:field="iconAlignVCenter" class="icon"/>
+              <div ui:field="iconAlignBottom" class="icon"/>
+            </div>
+            <div class="group">
+              <input id="checkboxJustify" type="checkbox"/>
+              <label for="checkboxJustify">Justify Text</label>
+            </div>
+          </div>
+        </div>
+        <div class="last">
+          <div class="debug">
+            <input id="checkboxDebug" type="checkbox"/>
+            <label for="checkboxDebug">Debug</label>
+          </div>
+          <button ui:field="btnReset">Reset</button>
+        </div>
+      </div>
+    </main>
+    <div class="featured">
+      <img src="/featured.png"/>
+    </div>
+    <footer>
+      Copyright ©
+      <span ui:field="spanYear">2023</span>
+      <a href="https://documentnode.io">Document Node</a>
+    </footer>
+  </g:HTMLPanel>
+</ui:UiBinder>

@@ -15,9 +15,10 @@
  */
 package org.docstr.gwt.canvastext.demo.client;
 
-import static elemental2.dom.DomGlobal.alert;
+import static elemental2.dom.DomGlobal.document;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.user.client.ui.RootPanel;
 
 /**
  * @author delight.wjk@gmail.com
@@ -26,6 +27,9 @@ public class Demo implements EntryPoint {
 
   @Override
   public void onModuleLoad() {
-    alert("Hello, world!");
+    MainView mainView = new MainView();
+    RootPanel.get().add(mainView);
+
+    document.getElementById("loading").remove();
   }
 }

@@ -10,10 +10,14 @@ clean:
 scss:
 	chmod +x ${PROJECT_DIR}/demo/scss.sh && ${PROJECT_DIR}/demo/scss.sh
 
-.PHONY: build
-build:
-	./gradlew build && \
+gwt:
+	./gradlew build
+
+j2cl:
 	cd ${PROJECT_DIR}/canvas-text && mvn j2cl:build
+
+.PHONY: build
+build: gwt j2cl
 
 run: build
 	chmod +x ${PROJECT_DIR}/demo/start_server.sh && ${PROJECT_DIR}/demo/start_server.sh

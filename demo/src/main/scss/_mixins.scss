@@ -1,0 +1,42 @@
+$lg-desktop: 1280px;
+$md-desktop: 1024px;
+$sm-tablet: 768px;
+$xs-phone: 568px;
+
+$max-width-sm: 720px;
+$max-width-md: 960px;
+$max-width-lg: 1100px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin max-width-sm() {
+  max-width: $max-width-sm;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@mixin max-width-md() {
+  max-width: $max-width-md;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@mixin max-width-lg() {
+  max-width: $max-width-lg;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@mixin gradient-background($start-color, $end-color) {
+  background-color: $start-color;
+  background: -webkit-linear-gradient(top, $start-color, $end-color 400px);
+  background: -moz-linear-gradient(top, $start-color, $end-color 400px);
+  background: -ms-linear-gradient(top, $start-color, $end-color 400px);
+  background: -o-linear-gradient(top, $start-color, $end-color 400px);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$start-color", endColorstr="$end-color 400px", GradientType=0);
+}
