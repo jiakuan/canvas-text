@@ -19,6 +19,9 @@ build: gwt
 run: build
 	chmod +x ${PROJECT_DIR}/demo/start_server.sh && ${PROJECT_DIR}/demo/start_server.sh
 
+site: build
+	cp -R ${PROJECT_DIR}/demo/src/main/webapp/ ${PROJECT_DIR}/../dn-client-sites/canvas-text.docstr.org/
+
 release:
 	./gradlew release -Prelease.useAutomaticVersion=true
 

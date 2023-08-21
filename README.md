@@ -31,7 +31,7 @@ Transforming Your Canvas with Multiline Magic ✨
 
 ## Demo
 
-Try the library with different options from the online demo: TODO
+Try the library with different options from the online demo: [https://canvas-text.docstr.org/](https://canvas-text.docstr.org/)
 
 ## Options
 
@@ -56,10 +56,8 @@ Try the library with different options from the online demo: TODO
 
 ## Methods
 
-TODO
-
 | Method                                    | Description                                                                                                                                                                                                                     |
 |:------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `drawText(ctx,text, config)`              | To draw the text to the canvas                                                                                                                                                                                                  |
+| `drawText(ctx, text, config)`             | To draw the text to the canvas                                                                                                                                                                                                  |
 | `splitText({ ctx, text, justify, width }` | To split the text `{ ctx: CanvasRenderingContext2D, text: string, justify: boolean, width: number }`                                                                                                                            |
 | `getTextHeight({ ctx, text, style })`     | To get the height of the text `{ ctx: CanvasRenderingContext2D, text: string, style: string (font style we pass to ctx.font) }` [ctx.font docs](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/font) |

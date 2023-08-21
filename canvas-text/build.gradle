@@ -1,11 +1,6 @@
 archivesBaseName = "canvas-text"
 
-def j2clVersion = "0.10.0-3c97afeac"
-
 dependencies {
-  testImplementation "com.vertispan.j2cl:junit-annotations:${j2clVersion}"
-  testImplementation "com.vertispan.j2cl:junit-emul:${j2clVersion}"
-  testImplementation "com.vertispan.j2cl:junit-emul:${j2clVersion}:sources"
 }
 
 signing {
@@ -29,7 +24,7 @@ publishing {
       }
       pom {
         name = 'Canvas Text'
-        description = 'A Miniscule GWT/J2CL/Javascript library to render text on HTML5 Canvas with ZERO dependencies.'
+        description = 'A Miniscule GWT/Javascript library to render text on HTML5 Canvas with ZERO dependencies.'
         url = 'https://github.com/jiakuan/canvas-text/'
         packaging = 'jar'
         licenses {
