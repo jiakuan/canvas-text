@@ -30,4 +30,4 @@ hs_err_pid*
 
 /demo/war/
 /demo/src/main/webapp/demo/
-/demo/src/main/webapp/demo.min.css
+/demo/src/main/webapp/main.min.css

@@ -1,13 +1,13 @@
 # Canvas Text
 
-![build](https://github.com/jiakuan/canvas-text/actions/workflows/gradle.yml/badge.svg) ![build](https://github.com/jiakuan/canvas-text/actions/workflows/maven.yml/badge.svg)
+![build](https://github.com/jiakuan/canvas-text/actions/workflows/gradle.yml/badge.svg)
 
-A Miniscule GWT/J2CL/Javascript library to render text on HTML5 Canvas with ZERO
+A Miniscule GWT/Javascript library to render text on HTML5 Canvas with ZERO
 dependencies
 
 This project is ported from the TypeScript
 project [Canvas-Txt](https://github.com/geongeorge/Canvas-Txt), and rewritten in
-Java, so it can be available in GWT/J2CL projects. The compiled JavaScript is
+Java, so it can be available in GWT projects. The compiled JavaScript is
 also available for **pure JavaScript** projects.
 
 <div align="center">
@@ -32,21 +32,6 @@ Transforming Your Canvas with Multiline Magic ✨
 ## Demo
 
 Try the library with different options from the online demo: TODO
-
-## Usage
-
-### GWT/J2CL
-
-TODO
-
-### Pure Javascript in Browser
-
-```html
-
-<canvas id="myCanvas" width="500" height="500"></canvas>
-
-TODO
-```
 
 ## Options
 

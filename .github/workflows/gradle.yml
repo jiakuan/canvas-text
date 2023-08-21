@@ -21,11 +21,11 @@ jobs:
       uses: gha-utilities/sass-build@v0.5.1
       with:
         source: |
-          canvas-text/src/main/scss/main.scss
-          demo/src/main/scss/demo.scss
+        # canvas-text/src/main/scss/main.scss
+          demo/src/main/scss/main.scss
         destination: |
-          canvas-text/src/main/webapp/main.min.css
-          demo/src/main/webapp/demo.min.css
+        # canvas-text/src/main/webapp/main.min.css
+          demo/src/main/webapp/main.min.css
 
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
