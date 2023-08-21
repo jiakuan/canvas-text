@@ -15,12 +15,15 @@
  */
 package org.docstr.gwt.canvastext.client;
 
+import static elemental2.dom.DomGlobal.console;
 import static org.docstr.gwt.canvastext.client.SplitText.splitText;
 import static org.docstr.gwt.canvastext.client.TextHeight.getTextHeight;
 
 import elemental2.dom.BaseRenderingContext2D.StrokeStyleUnionType;
 import elemental2.dom.CanvasRenderingContext2D;
 import java.util.List;
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
 
 /**
  * Java implementation of drawing canvas text inspired by a TypeScript library
@@ -28,12 +31,13 @@ import java.util.List;
  *
  * @author delight.wjk@gmail.com
  */
+@JsType(name = "CanvasText", namespace = JsPackage.GLOBAL)
 public class CanvasText {
 
   /**
    * @return a configuration with default styles
    */
-  public static CanvasTextConfig defaultConfig() {
+  public static CanvasTextConfig canvasTextConfig() {
     CanvasTextConfig config = new CanvasTextConfig();
     config.debug = false;
     config.align = "center";
@@ -68,14 +72,13 @@ public class CanvasText {
     double xEnd = cfg.x + cfg.width;
     double yEnd = cfg.y + cfg.height;
 
-    StringBuilder sb = new StringBuilder()
-        .append(cfg.fontStyle)
-        .append(" ").append(cfg.fontVariant)
-        .append(" ").append(cfg.fontWeight)
-        .append(" ").append(cfg.fontSize).append("px")
-        .append(" ").append(cfg.font);
-    String style = sb.toString();
+    String style = cfg.fontStyle
+        + " " + cfg.fontVariant
+        + " " + cfg.fontWeight
+        + " " + cfg.fontSize + "px"
+        + " " + cfg.font;
     ctx.font = style;
+    console.log("font: " + style);
 
     double txtY = cfg.y + cfg.height / 2 + cfg.fontSize / 2;
 

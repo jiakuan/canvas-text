@@ -2,19 +2,28 @@
     xmlns:g='urn:import:com.google.gwt.user.client.ui'>
   <g:HTMLPanel styleName="app">
     <header>
-      <h1>Canvas-Text: Text on HTML5 Canvas in GWT/J2CL/Javascript</h1>
+      <h1>Canvas-Text: Text on HTML5 Canvas in GWT/Javascript</h1>
       <p>A tiny, zero external dependency library that makes it easier to render
-        multiline text on HTML5 Canvas, available for GWT/J2CL/Javascript.
+        multiline text on HTML5 Canvas, available for GWT/Javascript.
         <br/>
-        (Read docs on <a href="https://github.com/jiakuan/canvas-text">
-          Github</a>)
+        (Read docs on <a href="https://github.com/jiakuan/canvas-text"
+            target="_blank">Github</a>)
       </p>
     </header>
     <main>
-      <canvas/>
+      <div class="canvas-wrap">
+        <div class="canvas-parent">
+          <canvas ui:field="canvas"/>
+        </div>
+        <div class="time-spent">
+          Last render took
+          <span ui:field="spanTimeSpent"/>
+          milliseconds.
+        </div>
+      </div>
       <div class="cfg">
-        <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-          convallis eros.
+        <textarea ui:field="textarea">Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Proin convallis eros.
         </textarea>
         <P>Canvas-Text uses the concept of text boxes borrowed from popular
           image editing software. You draw a rectangular box then place the text
@@ -22,23 +31,38 @@
         </P>
         <div class="slide">
           <label class="cfg-name">X</label>
-          <input type="range" min="0" max="100" value="0"/>
-          <input type="number" min="0" max="100" value="0"/>
+          <input ui:field="inputRangeX" type="range" min="0" max="100"
+              value="0"/>
+          <input ui:field="inputNumberX" type="number" min="0" max="100"
+              value="0"/>
         </div>
         <div class="slide">
           <label class="cfg-name">Y</label>
-          <input type="range" min="0" max="100" value="0"/>
-          <input type="number" min="0" max="100" value="0"/>
+          <input ui:field="inputRangeY" type="range" min="0" max="100"
+              value="0"/>
+          <input ui:field="inputNumberY" type="number" min="0" max="100"
+              value="0"/>
         </div>
         <div class="slide">
           <label class="cfg-name">Width</label>
-          <input type="range" min="0" max="100" value="0"/>
-          <input type="number" min="0" max="100" value="0"/>
+          <input ui:field="inputRangeWidth" type="range" min="0" max="100"
+              value="0"/>
+          <input ui:field="inputNumberWidth" type="number" min="0" max="100"
+              value="0"/>
         </div>
         <div class="slide">
           <label class="cfg-name">Height</label>
-          <input type="range" min="0" max="100" value="0"/>
-          <input type="number" min="0" max="100" value="0"/>
+          <input ui:field="inputRangeHeight" type="range" min="0" max="100"
+              value="0"/>
+          <input ui:field="inputNumberHeight" type="number" min="0" max="100"
+              value="0"/>
+        </div>
+        <div class="slide">
+          <label class="cfg-name">Font Size</label>
+          <input ui:field="inputRangeFontSize" type="range" min="0" max="100"
+              value="0"/>
+          <input ui:field="inputNumberFontSize" type="number" min="0" max="100"
+              value="0"/>
         </div>
         <div class="align">
           <label class="cfg-name">Align</label>

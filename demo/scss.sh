@@ -10,4 +10,4 @@ compile_scss() {
   echo "Generated and minified: $1.min.css"
 }
 
-compile_scss "main"
+compile_scss "demo"

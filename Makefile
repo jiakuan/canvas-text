@@ -13,11 +13,8 @@ scss:
 gwt:
 	./gradlew build
 
-j2cl:
-	cd ${PROJECT_DIR}/canvas-text && mvn j2cl:build
-
 .PHONY: build
-build: gwt j2cl
+build: gwt
 
 run: build
 	chmod +x ${PROJECT_DIR}/demo/start_server.sh && ${PROJECT_DIR}/demo/start_server.sh

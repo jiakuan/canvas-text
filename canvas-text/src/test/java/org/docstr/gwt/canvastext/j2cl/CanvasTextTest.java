@@ -1,4 +1,4 @@
-package org.docstr.gwt.canvastext;
+package org.docstr.gwt.canvastext.j2cl;
 
 import com.google.j2cl.junit.apt.J2clTestInput;
 import org.junit.Test;

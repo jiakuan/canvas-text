@@ -31,7 +31,7 @@ gwt {
     strict = true
     // Set to 'PRETTY' for debugging in browser
     // https://www.gwtproject.org/doc/latest/DevGuideCompilingAndDebugging.html#DevGuideCompilerOptions
-    style = "PRETTY"
+    //style = "PRETTY"
   }
 }
 

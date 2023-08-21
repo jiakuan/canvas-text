@@ -15,7 +15,6 @@
  */
 package org.docstr.gwt.canvastext.client;
 
-import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 

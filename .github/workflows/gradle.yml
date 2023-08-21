@@ -22,10 +22,10 @@ jobs:
       with:
         source: |
           canvas-text/src/main/scss/main.scss
-          demo/src/main/scss/main.scss
+          demo/src/main/scss/demo.scss
         destination: |
           canvas-text/src/main/webapp/main.min.css
-          demo/src/main/webapp/main.min.css
+          demo/src/main/webapp/demo.min.css
 
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1

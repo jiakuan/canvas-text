@@ -1,55 +1,46 @@
 @import "mixins";
-
-body {
-  margin: 0;
-  height: 100vh;
-  background: #f0f0f0;
-  color: #333333;
-  font-size: 15px;
-}
-
-body, textarea {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-body * {
-  box-sizing: border-box;
-}
-
-h1 {
-  font-size: 24px;
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
-
-p {
-  line-height: 1.5;
-}
-
-a {
-  color: #0071e8;
-}
-
-#loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: #cccccc;
-  width: 100%;
-  height: 100%;
-}
+@import "base";
 
 main {
   display: flex;
   margin: 30px 0;
+
+  @media only screen and (max-width: $sm-tablet) {
+    & {
+      flex-direction: column;
+    }
+  }
 }
 
-canvas {
-  background: #f5ede4;
-  border: 1px solid #dfc7ad;
+.canvas-wrap {
+  display: flex;
+  flex-direction: column;
   flex: 1 1 0;
   margin-right: 10px;
+
+  .canvas-parent {
+    flex: 1 1 0;
+    min-height: 320px;
+
+    canvas {
+      display: block;
+      background: #f5ede4;
+      border: 1px solid #dfc7ad;
+    }
+  }
+
+  .time-spent {
+    font-size: 12px;
+    flex: 0 0 0;
+    padding-top: 5px;
+  }
+
+  @media only screen and (max-width: $sm-tablet) {
+    & {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 textarea {
@@ -159,7 +150,7 @@ input[type=number]::-webkit-inner-spin-button {
     margin-left: 10px;
 
     label.cfg-name {
-      width: 50px;
+      width: 65px;
     }
 
     .slide {
@@ -185,15 +176,42 @@ input[type=number]::-webkit-inner-spin-button {
           align-items: center;
 
           .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
             margin: 5px 10px 5px 0;
+            cursor: pointer;
 
             svg {
               width: 24px;
               height: 24px;
               fill: #333333;
             }
+
+            &.active {
+              background: #4a9ef3;
+              border-radius: 3px;
+
+              svg {
+                fill: #ffffff;
+              }
+            }
           }
         }
+      }
+    }
+
+    .last {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    @media only screen and (max-width: $sm-tablet) {
+      & {
+        margin-left: 0;
       }
     }
   }
@@ -210,5 +228,6 @@ input[type=number]::-webkit-inner-spin-button {
 footer {
   text-align: center;
   border-top: 1px solid #cccccc;
-  padding-top: 10px;
+  margin-top: 30px;
+  padding-top: 5px;
 }
