@@ -33,6 +33,30 @@ Transforming Your Canvas with Multiline Magic ✨
 
 Try the library with different options from the online demo: [https://canvas-text.docstr.org/](https://canvas-text.docstr.org/)
 
+## Configure Maven dependency
+
+GWT Uploader is available in Maven central repository:
+
+https://search.maven.org/search?q=org.docstr:canvas-text
+
+To add the dependency to your `build.gradle` (for Gradle projects) or `pom.xml` (for Maven projects), use the following configuration:
+
+For Gradle projects:
+
+```
+implementation 'org.docstr:canvas-text:1.0.0'
+```
+
+For Maven projects:
+
+```
+<dependency>
+    <groupId>org.docstr</groupId>
+    <artifactId>canvas-text</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ## Options
 
 ![](./doc/canvas.jpg)
