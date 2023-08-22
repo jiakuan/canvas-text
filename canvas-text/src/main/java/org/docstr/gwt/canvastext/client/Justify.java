@@ -55,7 +55,7 @@ public class Justify {
       return text;
     }
 
-    console.log("numOfSpacesToInsert", numOfSpacesToInsert, numOfWords);
+    //console.log("numOfSpacesToInsert", numOfSpacesToInsert, numOfWords);
 
     String spaces = repeat(spaceChar, spacesPerWord);
 

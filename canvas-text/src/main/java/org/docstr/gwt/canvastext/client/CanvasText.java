@@ -78,7 +78,7 @@ public class CanvasText {
         + " " + cfg.fontSize + "px"
         + " " + cfg.font;
     ctx.font = style;
-    console.log("font: " + style);
+    //console.log("font: " + style);
 
     double txtY = cfg.y + cfg.height / 2 + cfg.fontSize / 2;
 
