@@ -6,7 +6,6 @@ Option            Description
 clean             Clean build directories of projects
 scss              Compile SCSS files into minified CSS
 gwt               Build GWT Gradle projects
-j2cl              Build J2CL Maven project
 build             Build both GWT and J2CL projects
 run               Run the demo application
 site              Deploy site to canvas-text.docstr.org
