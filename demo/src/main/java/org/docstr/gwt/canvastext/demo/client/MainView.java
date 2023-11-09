@@ -126,6 +126,7 @@ public class MainView extends Composite {
       updateInputValues(config);
       updateCanvas();
     });
+    textarea.addEventListener("input", evt -> updateCanvas());
     inputRangeX.addEventListener("input", evt -> {
       inputNumberX.value = inputRangeX.value;
       config.x = Double.parseDouble(inputRangeX.value);

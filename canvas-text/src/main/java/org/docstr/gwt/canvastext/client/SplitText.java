@@ -83,14 +83,14 @@ public class SplitText {
             splitPoint = Math.max(1, splitPoint - 1);
             splitPointWidth = measureText(ctx, textMap,
                 tempLine.substring(0, splitPoint));
-            if (splitPoint == 0 || splitPoint == 1) {
+            if (splitPoint == 1) {
               break;
             }
           }
         }
 
-        averageSplitPoint = Math.round(
-            averageSplitPoint + (splitPoint - averageSplitPoint) / index);
+        averageSplitPoint = (int) Math.round(averageSplitPoint * 1.0
+            + (splitPoint * 1.0 - averageSplitPoint) / index);
 
         // Remove last character that was out of the box
         splitPoint--;
@@ -100,9 +100,8 @@ public class SplitText {
           int tempSplitPoint = splitPoint;
           if (!" ".equals(
               tempLine.substring(tempSplitPoint, tempSplitPoint + 1))) {
-            while (!" ".equals(
-                tempLine.substring(tempSplitPoint, tempSplitPoint + 1)) &&
-                tempSplitPoint >= 0) {
+            while (tempSplitPoint >= 0 && !" ".equals(
+                tempLine.substring(tempSplitPoint, tempSplitPoint + 1))) {
               tempSplitPoint--;
             }
             if (tempSplitPoint > 0) {
