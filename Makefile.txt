@@ -10,5 +10,7 @@ build             Build both GWT and J2CL projects
 run               Run the demo application
 site              Deploy site to canvas-text.docstr.org
 release           Create a new release from master branch
-publish           Publish the latest version to Maven central
+publish-local     Publish the latest version to Maven local
+clean-s3          Clean all versions from S3
+publish           Publish the latest version to Maven local and S3
 

@@ -25,6 +25,13 @@ site: build
 release:
 	./gradlew release -Prelease.useAutomaticVersion=true
 
-publish:
-	rm -rf $$HOME/.m2/repository/org/docstr/canvas-text
-	./gradlew build publishMavenJavaPublicationToMavenLocal publishMavenJavaPublicationToMavenRepository
+publish-local: build
+	rm -rf $$HOME/.m2/repository/com/docstr/canvas-text
+	rm -rf $$HOME/.gradle/caches/modules-2/files-2.1/com.docstr/canvas-text
+	./gradlew publishMavenJavaPublicationToMavenLocal
+
+clean-s3:
+	aws s3 rm s3://maven.docstr.net/releases/com/docstr/canvas-text/ --recursive
+
+publish: publish-local clean-s3
+	./gradlew build publishMavenJavaPublicationToMavenRepository

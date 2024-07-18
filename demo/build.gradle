@@ -13,11 +13,11 @@ archivesBaseName = "demo"
 dependencies {
   implementation project(':canvas-text')
 
-  implementation "com.google.gwt:gwt-dev:2.10.0"
+  implementation "org.gwtproject:gwt-dev:2.11.0"
 }
 
 gwt {
-  gwtVersion = '2.10.0'
+  gwtVersion = '2.11.0'
   minHeapSize = "512M"
   maxHeapSize = "1024M"
   logLevel = 'INFO'
@@ -55,8 +55,8 @@ sourceSets.main.resources.srcDir 'src/main/java'
 sourceSets.test.resources.srcDir 'src/test/java'
 
 configurations {
-  runtime.exclude group: "com.google.gwt", module: "gwt-user"
-  runtime.exclude group: "com.google.gwt", module: "gwt-dev"
+  runtime.exclude group: "org.gwtproject", module: "gwt-user"
+  runtime.exclude group: "org.gwtproject", module: "gwt-dev"
 }
 
 clean {

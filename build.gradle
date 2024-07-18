@@ -23,7 +23,7 @@ subprojects {
     maven { url "https://plugins.gradle.org/m2/" }
   }
 
-  def javaVersion = JavaVersion.VERSION_1_8
+  def javaVersion = JavaVersion.VERSION_11
   sourceCompatibility = javaVersion
   targetCompatibility = javaVersion
 
@@ -94,10 +94,10 @@ subprojects {
           "commons-codec:commons-codec:1.10",
           "commons-io:commons-io:2.4",
           "net.bytebuddy:byte-buddy:1.12.21",
-          "org.ow2.asm:asm:7.1",
-          "org.ow2.asm:asm-commons:7.1",
-          "org.ow2.asm:asm-tree:7.1",
-          "org.ow2.asm:asm-analysis:7.1",
+          "org.ow2.asm:asm:9.2",
+          "org.ow2.asm:asm-commons:9.2",
+          "org.ow2.asm:asm-tree:9.2",
+          "org.ow2.asm:asm-analysis:9.2",
           "org.eclipse.jetty:jetty-util:9.2.14.v20151106",
           "org.eclipse.jetty:jetty-io:9.2.14.v20151106",
           "org.eclipse.jetty:jetty-server:9.2.14.v20151106",
@@ -117,10 +117,10 @@ subprojects {
 
   dependencies {
     // Google Web Toolkit
-    implementation "com.google.gwt:gwt-user:2.10.0"
+    implementation "org.gwtproject:gwt-user:2.11.0"
     // https://github.com/google/elemental2
-    implementation "com.google.elemental2:elemental2-dom:1.1.0"
-    implementation "com.google.jsinterop:base:1.0.0"
+    implementation 'com.google.elemental2:elemental2-dom:1.2.1'
+    implementation 'com.google.jsinterop:base:1.0.1'
 
     // FindBugs annotations
     implementation "com.google.code.findbugs:annotations:3.0.1"
